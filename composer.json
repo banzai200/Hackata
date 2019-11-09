@@ -3,7 +3,8 @@
         "guzzlehttp/guzzle": "~6.0",
         "escapework/frete": "0.5.*",
         "simplon/mysql": "^2.2",
+        "ext-SimpleXML": "^7.2",
         "jansenfelipe/loggi-php": "^1.0",
-        "ext-SimpleXML": "^7.2"
+        "spatie/geocoder": "^3.6"
     }
 }

@@ -75,7 +75,8 @@ class Jadlog{
         $LinkCalcFrete  .= "&vModalidade=".$this->vModalidade."&Password=".$this->Password."&vSeguro=".$this->vSeguro."&vVlDec=".$this->vVlDec."&vVlColeta=".$this->vVlColeta;
         $LinkCalcFrete  .= "&vCepOrig=".$this->vCepOrig."&vCepDest=".$this->vCepDest."&vPeso=".$this->vPeso."&vFrap=".$this->vFrap."&vEntrega=".$this->vEntrega."&vCnpj=".$this->vCnpj;
         echo $LinkCalcFrete;
-        $calculo 		= simplexml_load_file($LinkCalcFrete);
+        $calculo = simplexml_load_file($LinkCalcFrete);
+        echo $calculo->Retorno;
        if ( $calculo->Retorno == "-1" ) :
             throw new Exception("Acesso negado ou senha incorreta!");
        elseif($calculo->Retorno == "-2"):
@@ -85,7 +86,7 @@ class Jadlog{
        elseif($calculo->Retorno == "-99"):
             throw new Exception("Erro indeterminado! Favor entrar em contato com o Suporte através do email helpdesk@jadlog.com.br .");
        else:
-           return $calculo->Retorno;
+           echo $calculo->Retorno;
        endif;
        
             

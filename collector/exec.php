@@ -1,5 +1,5 @@
 <?php
-require 'collector\jadlog.php';
+require 'collector/jadlog.php';
 
 
 $jad = new Jadlog([

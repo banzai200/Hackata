@@ -1,13 +1,14 @@
 <?php
 namespace collector;
-require 'correios.php';
-require 'loggi.php';
-require 'sql.php';
-require 'jadlog.php';
+use EscapeWork\Frete\Correios\PrecoPrazo;
 
+require 'collector/correios.php';
+require 'collector/sql.php';
+require 'collector/jadlog.php';
 
-public function exec($cep)
+function exec($cep)
 {
-
+    $correios = new PrecoPrazo();
+    $jadlog = new \Jadlog();
 }
 
