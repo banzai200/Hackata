@@ -17,5 +17,5 @@ $jad = new Jadlog([
 
 ]);
 
-echo $jad->calcular_frete();
+echo $jad->calcular_frete() ;
 
