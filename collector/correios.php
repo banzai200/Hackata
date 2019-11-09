@@ -16,6 +16,8 @@ $frete->setCodigoServico(Data::SEDEX)
       ->setLargura(30)                  # obrigatorio
       ->setDiametro(30)                 # obrigatorio
       ->setPeso(50);                   # obrigatorio
+
+
 try {
     $result = $frete->calculate();
     return $result;
@@ -23,4 +25,5 @@ try {
 catch (FreteException $e) {
     return $e->getMessage();
 }
+
 ?>
