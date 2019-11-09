@@ -23,7 +23,7 @@ class sql{
 
     }
 
-    function insert ($frete, $idDestino, $rua, $cidade){
+    function insert ($frete, $cep, $rua, $cidade){
         $valor = $this->select('SELECT COUNT(id) FROM servicos');
         $idServico = (int)$valor + 1;
 
@@ -31,8 +31,10 @@ class sql{
 
             $data = [
                 'id' => $idServico,
-                'idDestino' => $idDestino,
+                'iCEP' => $cep,
                 'valorFrete' => $frete,
+                'Ruas'=>$rua,
+                'Cidade'=>$cidade
             ];
 
             $id = $this->connect()->insert('names', $data);
