@@ -74,7 +74,8 @@ class Jadlog{
     	$LinkCalcFrete	= "http://www.jadlog.com.br:8080/JadlogEdiWs/services/ValorFreteBean?method=valorar";
         $LinkCalcFrete  .= "&vModalidade=".$this->vModalidade."&Password=".$this->Password."&vSeguro=".$this->vSeguro."&vVlDec=".$this->vVlDec."&vVlColeta=".$this->vVlColeta;
         $LinkCalcFrete  .= "&vCepOrig=".$this->vCepOrig."&vCepDest=".$this->vCepDest."&vPeso=".$this->vPeso."&vFrap=".$this->vFrap."&vEntrega=".$this->vEntrega."&vCnpj=".$this->vCnpj;
-    	$calculo 		= simplexml_load_file($LinkCalcFrete);
+        echo $LinkCalcFrete;
+        $calculo 		= simplexml_load_file($LinkCalcFrete);
        if ( $calculo->Retorno == "-1" ) :
             throw new Exception("Acesso negado ou senha incorreta!");
        elseif($calculo->Retorno == "-2"):

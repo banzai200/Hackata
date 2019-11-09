@@ -3,6 +3,7 @@
         "guzzlehttp/guzzle": "~6.0",
         "escapework/frete": "0.5.*",
         "simplon/mysql": "^2.2",
-        "jansenfelipe/loggi-php": "^1.0"
+        "jansenfelipe/loggi-php": "^1.0",
+        "ext-SimpleXML": "^7.2"
     }
 }
