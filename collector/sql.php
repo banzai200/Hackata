@@ -1,29 +1,34 @@
 <?php
+namespace Simplon\Mysql;
 require 'vendor/autoload.php';
+
 
 class sql{
 
     function connect ()
     {
 
-        $pdo = new PDOConnector(
+        $pdo = new \Simplon\Mysql\PDOConnector(
             'remotemysql.com', // server
             '51tdLUiERP',      // user
             'DVOgxV52Om',      // password
             '51tdLUiERP'   // database
         );
-
-        $pdoConn = $pdo->connect('utf8', []); // charset, options
-
+        try {
+            $pdoConn = $pdo->connect('utf8', []); // charset, options
+        }
+        catch (\Exception $e){
+            echo $e->getMessage();
+        }
       return $dbConn = new Mysql($pdoConn);
 
     }
 
-    function inset ($id,$name,$age){
+    function insert ($id,$name,$age){
         $data = [
-            'id'   => id,
-            'name' => name,
-            'age'  => age,
+            'id'   => $id,
+            'name' => $name,
+            'age'  => $age,
         ];
 
         $id = $this->connect()->insert('names', $data);

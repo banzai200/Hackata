@@ -28,6 +28,15 @@ $to = new LocationEntity();
 $to->latitude = -19.8579253;
 $to->longitude = -43.94522380000001;
 
-$result = $orderResource->estimation($from, $to);
 
-echo 'Estimated price: '. $result->price;
+    try
+{
+    $result = $orderResource->estimation($from, $to);
+    echo 'Estimated price: '. $result->price;
+    return $result->price;
+}
+    catch (\Exception $e)
+{
+    echo $e->getMessage();
+    return $e->getMessage();
+}
