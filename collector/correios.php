@@ -1,6 +1,6 @@
 <?php
 require 'vendor/autoload.php';
-use GuzzleHttp\Client;
+
 use EscapeWork\Frete\Correios\PrecoPrazo;
 use EscapeWork\Frete\Correios\Data;
 use EscapeWork\Frete\FreteException;
@@ -28,8 +28,8 @@ try {
 }
 catch (FreteException $e) {
     // trate o erro adequadamente (e não escrevendo na tela)
-    //echo $e->getMessage();
-    //echo $e->getCode(); // este código é o código de erro dos correios
+    echo $e->getMessage();
+    echo $e->getCode(); // este código é o código de erro dos correios
                         // pode ser usado pra dar mensagens como CEP inválido para o cliente
 }
 }
