@@ -4,8 +4,57 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "35a239f26f96a30f3493aef7e0f87f9b",
+    "content-hash": "9f4637aac22ad03296fe93313ba87ba7",
     "packages": [
+        {
+            "name": "escapework/frete",
+            "version": "0.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/EscapeWork/Frete.git",
+                "reference": "adf0193d1bc297925158f51b7c1380079cfee528"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/EscapeWork/Frete/zipball/adf0193d1bc297925158f51b7c1380079cfee528",
+                "reference": "adf0193d1bc297925158f51b7c1380079cfee528",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~5.0|~6.0",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "~2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "EscapeWork\\Frete\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luís Dalmolin",
+                    "email": "luis.nh@gmail.com"
+                },
+                {
+                    "name": "Eduardo Henrique Kasper",
+                    "email": "ehkasper@gmail.com"
+                }
+            ],
+            "description": "Library pra cálculo de frete",
+            "time": "2017-11-30T10:03:12+00:00"
+        },
         {
             "name": "guzzlehttp/guzzle",
             "version": "6.4.1",
