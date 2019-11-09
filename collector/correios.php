@@ -9,18 +9,18 @@ use EscapeWork\Frete\FreteException;
 $frete = new PrecoPrazo();
 
 $frete->setCodigoServico(Data::SEDEX)
-      ->setCepOrigem('02363130')   # apenas numeros, sem hifen(-)
-      ->setCepDestino('064'.strval($i)) # apenas numeros, sem hifen(-)
+      ->setCepOrigem('05660000')   # apenas numeros, sem hifen(-)
+      ->setCepDestino('06715790') # apenas numeros, sem hifen(-)
       ->setComprimento(30)              # obrigatorio
       ->setAltura(30)                   # obrigatorio
       ->setLargura(30)                  # obrigatorio
       ->setDiametro(30)                 # obrigatorio
-      ->setPeso(50);                   # obrigatorio
+      ->setPeso(10);                   # obrigatorio
 
 
 try {
     $result = $frete->calculate();
-    return $result;
+    var_dump($result);
 }
 catch (FreteException $e) {
     return $e->getMessage();
