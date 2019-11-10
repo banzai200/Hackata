@@ -6,8 +6,7 @@ use EscapeWork\Frete\Correios\ConsultaCEP;
 use GuzzleHttp\client;
 
 $moto = new main;
-$moto->correios('04849507', '02363130', '30', '30', '10', '10', '5');
-
+$moto->correios($_POST["cepini"], $_POST["cepend"],$_POST["comp"], $_POST["altu"], $_POST["larg"],$_POST["diam"], $_POST["peso"] );
 class main{
 
 
@@ -56,7 +55,7 @@ public function correios($cepOrigem, $cepDestino, $comprimento, $altura, $largur
         }
     if($normald == $normalr) {
        $motoboy = $this->motoboy($cepOrigem, $cepDestino, $normalr);}
-    return [$op, $motoboy];
+    return [$op, $motoboy, $destino, $remetente];
 }
 function motoboy($cepOrigem, $cepDestino, $cidade = 'sp%2Fsao-paulo'){
     $motoboy = new GuzzleHttp\Client;

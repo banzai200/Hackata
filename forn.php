@@ -18,10 +18,11 @@
         <img class="card-img-top" src="monster.png" class="mt-2" alt="GAMER FUEL OwO">
         <div class="card-body">
           <h5 class="bloco-title">Frete do produto</h5>
-		  <form action="" class="mt-3">  
-		  <div class=" w-25 d-inline"><input type="text" name="cepini" class="w-75" placeholder="CEP Inicial" ></div><div class="p-1"></div>	
+		  <form action="main.php" method="post" class="mt-3">
+		  <div class=" w-25 d-inline"><input type="text" name="cepini" class="w-75" placeholder="CEP Inicial" ></div><div class="p-1"></div>
           <div class=" w-25 d-inline"><input type="text" name="cepend" class="w-75" placeholder="CEP Final" ></div><div class="p-1"></div>
-		  <div class=" w-25 d-inline"><input type="text" name="peso" class="w-75" placeholder="Peso" ></div><div class="p-1"></div>
+              <div class=" w-25 d-inline"><input type="text" name="peso" class="w-75" placeholder="Peso" ></div><div class="p-1"></div>
+              <div class=" w-25 d-inline"><input type="text" name="comp" class="w-75" placeholder="Comprimento" ></div><div class="p-1"></div>
 		  <div class=" w-25 d-inline"><input type="text" name="altu" class="w-75" placeholder="Altura" ></div><div class="p-1"></div>
 		  <div class=" w-25 d-inline"><input type="text" name="larg" class="w-75" placeholder="Largura" ></div><div class="p-1"></div>
 		  <div class=" w-25 d-inline"><input type="text" name="diam" class="w-75" placeholder="Diâmetro" ></div>
@@ -33,7 +34,7 @@
 		  <button  type="button" class="btn" id="left-panel-link" >Calcular Frete</button>
 		  </form>
 		  <div class="p-2"></div>
-		  <div class="w-25 d-inline"><input type="text" class="w-75" name="ruaini" placeholder="Logradouro inicial aqui" readonly></div>
+		  <div class="w-25 d-inline"><input type="text" class="w-75" name="ruaini" placeholder="Logradouro inicial aqui" readonly value="<?php echo $moto->correios(); ?>"></div>
 		  <div class="p-1"></div>
 		  <div class="w-25 d-inline"><input type="text" class="w-75" name="ruaend" placeholder="Logradouro final aqui" readonly></div>
 		  <div class="p-1"></div>

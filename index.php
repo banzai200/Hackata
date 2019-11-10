@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
-
+<?php
+$moto->correios()
+?>
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
