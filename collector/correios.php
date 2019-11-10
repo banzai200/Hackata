@@ -4,8 +4,9 @@ require 'vendor/autoload.php';
 use EscapeWork\Frete\Correios\PrecoPrazo;
 use EscapeWork\Frete\Correios\Data;
 use EscapeWork\Frete\FreteException;
+use EscapeWork\Frete\Correios\ConsultaCEP;
 
-
+$consulta = new ConsultaCEP();
 $frete = new PrecoPrazo();
 
 $frete->setCodigoServico(Data::SEDEX)
@@ -20,7 +21,8 @@ $frete->setCodigoServico(Data::SEDEX)
 
 try {
     $result = $frete->calculate();
-    var_dump($result);
+    $nano = $consulta->setCep('01138000')->find();
+    var_dump($nano->end, $nano->bairro, $nano->cidade);
 }
 catch (FreteException $e) {
     return $e->getMessage();
