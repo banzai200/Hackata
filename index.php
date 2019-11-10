@@ -29,7 +29,7 @@
 		  <button  type="button" class="btn" id="left-panel-link" >Calcular Frete</button>
 		  </form>
 		  <div class="p-2"></div>
-		  <div class="w-25 d-inline"><input type="text" class="w-75" placeholder="Logradouro aparece aqui" readonly></div>
+		  <div class="w-25 d-inline"><input type="text" class="w-75" name="ruaend" placeholder="Logradouro aparece aqui" readonly></div>
 		  <div class="p-1"></div>
 		  
         </div>
