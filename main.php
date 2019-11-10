@@ -5,40 +5,40 @@ use EscapeWork\Frete\Correios\Data;
 use EscapeWork\Frete\FreteException;
 use EscapeWork\Frete\Correios\ConsultaCEP;
 use GuzzleHttp\client;
-require 'collector/jadlog.php';
-$fuck = new main;
-$fuck->correios('01138000', '02363130', '45', '45', '15', '15', '15');
 
-$jadlog = new \Jadlog();
+$moto = new main;
+$moto->motoboy('04849507', '02363130');
 
 class main{
 
-//$fuck = new GuzzleHttp\Client;
-//$no = $fuck->post('https://www.motoboy.com/apiV1/orcamento?cidade=sp%2Fsao-paulo&endereco1_cep=05016000&endereco2_cep=01138000');
-//echo $no->getBody()->getContents();
+
 public function correios($cepOrigem, $cepDestino, $comprimento, $altura, $largura, $diametro, $peso)
 {
     $correios = new PrecoPrazo();
     $correiosEnd = new ConsultaCEP();
-    $correios->setCodigoServico(Data::$codigos)
-        ->setCepOrigem($cepOrigem)
-        ->setCepDestino($cepDestino)
-        ->setComprimento($comprimento)
-        ->setAltura($altura)
-        ->setLargura($largura)
-        ->setDiametro($diametro)
-        ->setPeso($peso);
-
+    $codigos = ['04014', '04510', '40169', '40215', '40290'];
+    foreach ($codigos as $codigo){
+        $sedex = $correios->setCodigoServico($codigo)
+            ->setCepOrigem($cepOrigem)
+            ->setCepDestino($cepDestino)
+            ->setComprimento($comprimento)
+            ->setAltura($altura)
+            ->setLargura($largura)
+            ->setDiametro($diametro)
+            ->setPeso($peso);
     try {
-        $result = $correios->calculate();
-        print_r($result);
-    }
-    catch (FreteException $e) {
-        print_r($e->getMessage());
-        return $e->getMessage();
-
+        $correiosEnd->setCep($cepDestino);
+        $result = $sedex->calculate();
+        var_dump($result['cServico']['Valor']);
+        var_dump($result['cServico']['PrazoEntrega']);
+    } catch (FreteException $e) {
+        var_dump($e->getMessage());
     }
 }
-function motoboy($cepOrigem, $cepDestino, $cidade){
-
+}
+function motoboy($cepOrigem, $cepDestino, $cidade = 'sp%2Fsao-paulo'){
+$motoboy = new GuzzleHttp\Client;
+$no = $motoboy->post('https://www.motoboy.com/apiV1/orcamento?cidade=sp%2Fsao-paulo&endereco1_cep='.$cepOrigem.'&endereco2_cep='.$cepDestino);
+$no = json_decode($no->getBody()->getContents(), true);
+echo floatval($no["valor"]);
 }}
