@@ -16,6 +16,9 @@ body {
   font-size:20px;
 }
 
+.container{
+	display:inline-block;
+}
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media (max-width: 800px) {
   .column {
@@ -85,4 +88,15 @@ textarea {
 }
 input[type='text'] {
   background-color: #ebe9e9;
+}
+.bloco {
+  opacity: 0.8;
+  filter: alpha(opacity=60);
+}
+.bloco-title {
+  font-weight:bold;
+  text-align: center;
+}
+.bloco-text {
+  text-align: justify;
 }

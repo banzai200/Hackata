@@ -15,12 +15,16 @@
   <body style='background-image: url("fundoNice.png") !important;'>
   <div class="container align-top">
 <div class="card w-25 float-left">
-        <img class="card-img-top" src="vbucks.png" class="mt-2" alt="FREE V-BUCKS HACK OwO">
+        <img class="card-img-top" src="monster.png" class="mt-2" alt="GAMER FUEL OwO">
         <div class="card-body">
           <h5 class="bloco-title">Frete do produto</h5>
 		  <form action="" class="mt-3">  
-
-          <div class=" w-25 d-inline"><input type="text" class="w-75" name="cepini" placeholder="Forneça um CEP" onkeyup="checkForm()"></div> <div class="w-auto ml-2 d-inline"><i class="fa fa-map-marker"style="font-size:20px;"></i></div>
+		  <div class=" w-25 d-inline"><input type="text" name="cepini" class="w-75" placeholder="CEP Inicial" ></div><div class="p-1"></div>	
+          <div class=" w-25 d-inline"><input type="text" name="cepend" class="w-75" placeholder="CEP Final" ></div><div class="p-1"></div>
+		  <div class=" w-25 d-inline"><input type="text" name="peso" class="w-75" placeholder="Peso" ></div><div class="p-1"></div>
+		  <div class=" w-25 d-inline"><input type="text" name="altu" class="w-75" placeholder="Altura" ></div><div class="p-1"></div>
+		  <div class=" w-25 d-inline"><input type="text" name="larg" class="w-75" placeholder="Largura" ></div><div class="p-1"></div>
+		  <div class=" w-25 d-inline"><input type="text" name="diam" class="w-75" placeholder="Diâmetro" ></div>
 		  <div class="p-1"></div>
 		  <div class="w-50 d-inline">
 				
@@ -29,14 +33,15 @@
 		  <button  type="button" class="btn" id="left-panel-link" >Calcular Frete</button>
 		  </form>
 		  <div class="p-2"></div>
-		  <div class="w-25 d-inline"><input type="text" class="w-75" name="ruaend" placeholder="Logradouro aparece aqui" readonly></div>
+		  <div class="w-25 d-inline"><input type="text" class="w-75" name="ruaini" placeholder="Logradouro inicial aqui" readonly></div>
 		  <div class="p-1"></div>
-		  
+		  <div class="w-25 d-inline"><input type="text" class="w-75" name="ruaend" placeholder="Logradouro final aqui" readonly></div>
+		  <div class="p-1"></div>
         </div>
         <div class="card-footer">
 		  <img src="hclogo.png" class="rounded img-thumbnail"> 
 		 <div class="p-1"></div>
-          <a href="forn.php"><button  type="button" class="btn" id="left-panel-link" >Como Fornecedor</button></a>
+          <a href="index.php"><button  type="button" class="btn" id="left-panel-link" >Como cliente</button></a>
         </div>
       </div>
 	  <div class="p-2 float-left"></div>
@@ -68,6 +73,17 @@
 				<div class="col"><input type="text" name="time6" class="w-75" placeholder="Prazo Motoboy" readonly></div>
 			</div>
 			
+		</div>
+		<div class="card-footer">
+			<h4 class="card-title h4"><i class="fas fa-dollar-sign"></i>   Lucros do frete   <i class="fas fa-dollar-sign"></i></h4>
+			<div class="row pt-3" id="lucro">
+				<div class="col"><input type="text" name="lucro1" class="w-75" placeholder="Pac" readonly></div>
+				<div class="col"><input type="text" name="lucro2" class="w-75" placeholder="Sedex" readonly></div>
+				<div class="col"><input type="text" name="lucro3" class="w-75" placeholder="Sedex10" readonly></div>
+				<div class="col"><input type="text" name="lucro4" class="w-75" placeholder="Sedex12" readonly></div>
+				<div class="col"><input type="text" name="lucro5" class="w-75" placeholder="Sedex Hoje" readonly></div>
+				<div class="col"><input type="text" name="lucro6" class="w-75" placeholder="Motoboy" readonly></div>
+			</div>
 		</div>
 		</div>
       </div>
